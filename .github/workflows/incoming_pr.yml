@@ -56,4 +56,9 @@ jobs:
 
       # Builds all models and runs tests in DAG order, failing early if any upstream test breaks
       - name: Build and test dbt project in ${{ vars.SNOWFLAKE_DATABASE }}.${{ vars.SNOWFLAKE_SCHEMA }}
-        run: snow dbt execute -x tester_tasty_bytes_dbt_project_object_gh_action build --target dev
+        run: |
+          snow dbt execute -x tester_tasty_bytes_dbt_project_object_gh_action \
+          --database ${{ vars.SNOWFLAKE_DATABASE }} \
+          --schema ${{ vars.SNOWFLAKE_SCHEMA }} \
+          --warehouse ${{ vars.SNOWFLAKE_WAREHOUSE }} \
+          build --target dev
