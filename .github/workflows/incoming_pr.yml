@@ -46,6 +46,7 @@ jobs:
           --source ./tasty_bytes_dbt_demo \
           --database ${{ vars.SNOWFLAKE_DATABASE }} \
           --schema ${{ vars.SNOWFLAKE_SCHEMA }} \
+          --warehouse ${{ vars.SNOWFLAKE_WAREHOUSE }} \
           --default-target prod \
           --dbt-version 1.10.15 \
           --force -x
