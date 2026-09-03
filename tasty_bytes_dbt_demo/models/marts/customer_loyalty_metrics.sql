@@ -1,4 +1,5 @@
 /************just added commetns to validate CI/CD **************/
+/**************Add one more comments*******************/
 SELECT 
     cl.customer_id,
     cl.city,
